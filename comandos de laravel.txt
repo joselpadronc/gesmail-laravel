@@ -1,0 +1,36 @@
+comandos de laravel 
+php artisan make          para crear controladores ...
+php artisan meke:         para crear migraciones......
+php migrate               hacer migracione
+php migrate:rollback      eliminar ultimo lote
+php migrate:fresh         eliminar todos los lotes y los vuelve a crear  solo ejecutar 
+php artisan:reset         eliminar todas las tablas en la DB
+                          cuando se esta en desarrollo no en produccion
+php artisan make:migration create_archivoname_table crea la clase 
+schema::create('archivoname', function(Blueprint $table){
+    $table->id();
+    $table->timestamps();
+})
+
+schema::dropIfExists('archivoname')
+
+php artisan make:migration add_columname_to_tablname_table  crea una nueva migracion pero con el metodo table  
+                                                            para agregar una nueva columna a una tabla en la DB 
+                                                             para que no de error incorpoara el metodo nullable()
+para eliminar la clumna con el metodo dropColumn('columnname'), para colocar la nueva columna donde se quiera utilizar el metodo afther('columnname')
+
+php artisan tinker trabajar agregar datos a la BD con ORM desde la terminal
+como usar: php artisan tinker
+        >>> use App/Model/Name
+        >>> $josue = new Name
+        luego se utiliza la variable $josue para anadir informacion a cada campo de la BD  
+php artisan db:seed llenar tablas de informacion se relaciona con php artisan migrate:fresh se puede ejecutar php artisan migrate:fetch --seed 
+php artisan make:seeder nameSeeder para crear un nuevo archivo seeder
+ DataBaseSeeder this->call(nameSeeder::class); para leer todo lo que este destro del archino nameSeede
+php artisan make:factory --model paracrear un factory
+para llenar los factory en el return[pasar los compos de la base de datos]
+
+
+COMO HACER UN CRUD
+
+
